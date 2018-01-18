@@ -1,0 +1,75 @@
+.project-name {
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.recipes {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipes-list {
+  width: 30%;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.active-recipe {
+  width: 70%;
+}
+
+.active-recipe__title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.active-recipe__image-container {
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.active-recipe__image {
+  width: 100%;
+}
+
+.active-recipe__content {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.active-recipe__ingredients {
+  line-height: 20px;
+}
+
+.recipes-list__item {
+  cursor: pointer;
+}
+
+.recipes-list__item--active {
+  text-decoration: underline;
+}
+
+.active-recipe__steps {
+  line-height: 20px;
+}
+
+.active-recipe__tabs {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.active-recipe__tab {
+  margin-right: 10px;
+}
+
+.active-recipe__tab--active {
+  text-decoration: underline;
+}

@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id='root'>
+      <div class='project-name'>Recipes book</div>
+      <div class='recipes'>
+        <div class='recipes-list'>
+          <div v-for='recipe in recipes'
+               class='recipes-list__item'
+               v-bind:class="{'recipes-list__item--active': isActiveRecipe(recipe)}"
+               @click='activateRecipe(recipe)'>
+              {{recipe.title}}
+          </div>
+        </div>
+
+        <div class='active-recipe'>
+          <div class='active-recipe__title'>
+            {{activeRecipe.title}}
+          </div>
+
+          <div class='active-recipe__image-container'>
+            <img :src='activeRecipe.image'
+                 class='active-recipe__image' />
+          </div>
+
+          <div class='active-recipe__content'>
+            <div class='active-recipe__tabs'>
+              <div class='active-recipe__tab'
+                   :class="{'active-recipe__tab--active': isActiveTab('ingredients')}"
+                   @click="activateTab('ingredients')">
+                Ingredients
+              </div>
+              <div class='active-recipe__tab'
+                   :class="{'active-recipe__tab--active': isActiveTab('steps')}"
+                   @click="activateTab('steps')">
+                Steps
+              </div>
+            </div>
+
+            <div class='active-recipe__ingredients'
+                 v-show="isActiveTab('ingredients')">
+              <div v-for='(ingredient, index) in activeRecipe.ingredients'>
+                {{index + 1}}. {{ingredient}}
+              </div>
+            </div>
+
+            <div class='active-recipe__steps'
+                 v-show="isActiveTab('steps')">
+              <div v-for='(step, index) in activeRecipe.steps'>
+                {{index + 1}}. {{step}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
